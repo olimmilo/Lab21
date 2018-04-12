@@ -81,7 +81,8 @@ def LineInt(lin1, lin2):
 def convert(iteration,datalen,interval):
     name="trial"+str(iteration)+".csv"
     with open(name, 'rb') as trialcsv:
-	
+        reader = csvreader(trialcsv)
+        reader.readrows(funclist)
     return(funclist)
 
 def finish(m,table):
