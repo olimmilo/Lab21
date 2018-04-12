@@ -1,5 +1,5 @@
 import csv
-import numpy
+#import numpy
 
 """
 Experiment vars which could be input but are just written into the code are defined at the top in all caps
@@ -14,6 +14,7 @@ INTERVALS=[1,1,10,10,10,10]
 ##defines functions
 
 def smooth(list,degree=6):
+    """
     return(list)
 
     window=degree*2-1
@@ -35,6 +36,8 @@ def smooth(list,degree=6):
         smoothed[i]=sum(numpy.array(list[i:i+window])*weight)/sum(weight)
 
     return(smoothed)
+    """
+    return(list)
 
 
 def sum(list):
@@ -85,19 +88,20 @@ def convert(iteration,datalen,interval):
         reader.readrows(funclist)
     return(funclist)
 
+def average(set1,set2):
+    ##sets the data sets to thier given size, then averges the two
+    return(set1)
+
 def finish(m,table):
-    avglist=[ROWLABELS[m]]
     i=0
-    while i < len(table):
-        avglist.append(mean([table[i][m],table[i+1][m]]))
-        i += 2
+    ##unite all three trials into one
     return(avglist)
 ##creates smoothed data sets
 
 rawtrials=[]
     
 i=0
-while i < 3:
+while i < 6:
     it = i + 1
     rawtrials.append(convert(it,DATALEN,INTERVALS[i]))
     i += 1
@@ -110,31 +114,25 @@ while i < len(rawtrials):
     i += 1
 
 ##preforms calculations
-calctable=[]
+avtable=[]
 
 i=0
-while i < len(smoothtrials):
-    calctable.append(calculations(smoothtrials[i],i))
-    i += 1
+while i < 6:
+    avtable.append(average(smoothtrials[i],smoothtrials[i+1],i,(i+1)))
+    i += 2
 i=0
 
     
-fintable=[COLLUMNLABELS]
+fintable=[]
 
 i=0
-while i < 4:
-    fintable.append(finish(i,calctable))
+while i < DATALEN:
+    fintable.append(finish(i,avtable))
     i += 1
 
 i=0
 i=0
 
-with open('output.csv','w') as printfile:
+with open('smoothedrec.csv','w') as printfile:
     writer = csv.writer(printfile)
     writer.writerows(fintable)
-
-with open('out2.csv','w') as printfile2:
-    writer = csv.writer(printfile2)
-    writer.writerows(calctable)
-
-print(fintable)
