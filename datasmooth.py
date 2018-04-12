@@ -130,8 +130,12 @@ def average(set1,set2,iter1,iter2):
 
 def finish(m,table):
     i=0
+    fullofm=[]
+    while i < len(table):
+        fullofm.append(table[i][m])
+        i += 1
     ##unite all three trials into one per row
-    return(avglist)
+    return(fullofm)
 ##creates smoothed data sets
 
 rawtrials=[]
