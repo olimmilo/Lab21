@@ -93,17 +93,40 @@ def average(set1,set2,iter1,iter2):
     int2=INTERVALS[iter2]
     truelen1=TRUELEN[iter1]
     truelen2=TRUELEN[iter2]
+    finlen=180
     pre1=[]
     pre2=[]
     i=0
     while i < len(set1):
         n=0
-        while n < 
+        vallist=[]
+        while n < (trulen1/finlen):
+            setiter=i+n
+            vallist.append(set1(setiter))
+            n += 1
         value=mean(vallist)
         pre1.append(value)
         i += int1
+    i=0
+    while i < len(set2):
+        n=0
+        vallist=[]
+        while n < (trulen2/finlen):
+            setiter=i+n
+            vallist.append(set2(setiter))
+            n += 1
+        value=mean(vallist)
+        pre2.append(value)
+        i += int1
+    finset=[]
+    i=0
+    while i < finlen:
+        value= (pre1[i]+pre2[2])/2
+        finset.append(value)
+        i += 1
+    
     ##sets the data sets to thier given size, then averges the two
-    return(set1)
+    return(finset)
 
 def finish(m,table):
     i=0
