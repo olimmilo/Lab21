@@ -40,7 +40,6 @@ def smooth(list,degree=6):
     """
     return(list)
 
-
 def sum(list):
     i = 0
     s = 0
@@ -49,38 +48,11 @@ def sum(list):
         i += 1
     return(s)
 
-
 def mean(list):
     i = 0
     s = sum(list)
     mean = s/len(list)
     return(mean)
-
-
-def LinReg(list,start,interval):
-    y=list
-    x=[]
-    while len(x) < len(y):
-        x.append((len(x)*interval)+start)
-    xy=[n*m for n,m in zip(x,y)]
-    x2=[j**2 for j in x]
-    n=len(list)
-    m=((n*sum(xy))-(sum(x)*sum(y)))/((n*sum(x2))-(sum(x)**2))
-    b=((sum(y)*sum(x2))-(sum(x)*sum(xy)))/((n*sum(x2))-(sum(x)**2))
-    ans=[m,b]
-    return(ans)
-
-
-def LineInt(lin1, lin2):
-	m=lin1[0]
-	b=lin1[1]
-	n=lin2[0]
-	c=lin2[1]
-	y=((n*b)-(m*c))/(n-m)
-	x=(y-c)/n
-	intersect=[x,y]
-	return(intersect)
-
 
 def convert(iteration):
     name="trial"+str(iteration)+".txt"
@@ -100,7 +72,7 @@ def average(set1,set2,iter1,iter2):
     while i < len(set1):
         n=0
         vallist=[]
-        while n < (trulen1/finlen):
+        while n < (truelen1/finlen):
             setiter=i+n
             vallist.append(set1(setiter))
             n += 1
@@ -111,7 +83,7 @@ def average(set1,set2,iter1,iter2):
     while i < len(set2):
         n=0
         vallist=[]
-        while n < (trulen2/finlen):
+        while n < (truelen2/finlen):
             setiter=i+n
             vallist.append(set2(setiter))
             n += 1
