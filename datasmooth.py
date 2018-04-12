@@ -61,6 +61,8 @@ def convert(iteration):
     funclist=[]
     i=0
     while i < TRUELEN[iteration-1]:
+        lel=re.findall("\d+\.\d+", functrial[i])
+        functrial.append(float(lel[0]))
         i+=1
     print(len(functrial))
     ##funclist=[float(i) for i in functrial]
