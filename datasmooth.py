@@ -85,14 +85,23 @@ def LineInt(lin1, lin2):
 def convert(iteration):
     name="trial"+str(iteration)+".txt"
     functrial=open(name).readlines()
-    funclist=[]
-    i=0
-    while len(funclist) < TRUELEN[it-1]:
-    	funclist.append(float(functrial[i]))
-	    i += 1
+    funclist=functrial
     return(funclist)
 
 def average(set1,set2,iter1,iter2):
+    int1=INTERVALS[iter1]
+    int2=INTERVALS[iter2]
+    truelen1=TRUELEN[iter1]
+    truelen2=TRUELEN[iter2]
+    pre1=[]
+    pre2=[]
+    i=0
+    while i < len(set1):
+        n=0
+        while n < 
+        value=mean(vallist)
+        pre1.append(value)
+        i += int1
     ##sets the data sets to thier given size, then averges the two
     return(set1)
 
