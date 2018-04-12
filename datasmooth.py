@@ -88,7 +88,7 @@ def convert(iteration,datalen,interval):
         reader.readrows(funclist)
     return(funclist)
 
-def average(set1,set2):
+def average(set1,set2,iter1,iter2):
     ##sets the data sets to thier given size, then averges the two
     return(set1)
 
