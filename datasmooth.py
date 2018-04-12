@@ -57,7 +57,7 @@ def mean(list):
 def convert(iteration):
     name="trial"+str(iteration)+".txt"
     functrial=open(name).readlines()
-    funclist=functrial
+    funclist=[float(i) for i in functrial]
     return(funclist)
 
 def average(set1,set2,iter1,iter2):
