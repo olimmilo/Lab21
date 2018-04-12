@@ -74,7 +74,7 @@ def average(set1,set2,iter1,iter2):
         vallist=[]
         while n < (truelen1/finlen):
             setiter=i+n
-            vallist.append(set1(setiter))
+            vallist.append(set1[setiter])
             n += 1
         value=mean(vallist)
         pre1.append(value)
@@ -85,7 +85,7 @@ def average(set1,set2,iter1,iter2):
         vallist=[]
         while n < (truelen2/finlen):
             setiter=i+n
-            vallist.append(set2(setiter))
+            vallist.append(set2[setiter])
             n += 1
         value=mean(vallist)
         pre2.append(value)
