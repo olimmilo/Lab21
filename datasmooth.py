@@ -59,7 +59,7 @@ def convert(iteration):
     name="trial"+str(iteration)+".txt"
     functrial=open(name).readlines()
     funclist=functrial
-    print(functrial)
+    print(len(functrial))
     ##funclist=[float(i) for i in functrial]
     return(funclist)
 
