@@ -125,9 +125,11 @@ while i < len(rawtrials):
     smoothtrials.append(smooth(rawtrials[i]))
     i += 1
 
+
+print(smoothtrials)
 ##preforms calculations
 avtable=[]
-
+"""
 i=0
 while i < 6:
     avtable.append(average(smoothtrials[i],smoothtrials[i+1],i,(i+1)))
@@ -147,3 +149,4 @@ i=0
 with open('smoothedrec.csv','w') as printfile:
     writer = csv.writer(printfile)
     writer.writerows(fintable)
+"""
