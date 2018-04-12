@@ -10,6 +10,7 @@ smoothing function was provided in the scipy numpy handbook and is not my own wo
 ##Experiment vars
 DATALEN=180
 INTERVALS=[1,1,10,10,10,10]
+TRUELEN=[180,180,1800,1800,1800,1800]
 
 ##defines functions
 
@@ -81,11 +82,14 @@ def LineInt(lin1, lin2):
 	return(intersect)
 
 
-def convert(iteration,datalen,interval):
-    name="trial"+str(iteration)+".csv"
-    with open(name, 'rb') as trialcsv:
-        reader = csvreader(trialcsv)
-        reader.readrows(funclist)
+def convert(iteration):
+    name="trial"+str(iteration)+".txt"
+    functrial=open(name).readlines()
+    funclist=[]
+    i=0
+    while len(funclist) < TRUELEN[it-1]:
+    	funclist.append(float(functrial[i]))
+	    i += 1
     return(funclist)
 
 def average(set1,set2,iter1,iter2):
@@ -94,7 +98,7 @@ def average(set1,set2,iter1,iter2):
 
 def finish(m,table):
     i=0
-    ##unite all three trials into one
+    ##unite all three trials into one per row
     return(avglist)
 ##creates smoothed data sets
 
@@ -103,7 +107,7 @@ rawtrials=[]
 i=0
 while i < 6:
     it = i + 1
-    rawtrials.append(convert(it,DATALEN,INTERVALS[i]))
+    rawtrials.append(convert(it))
     i += 1
 
 smoothtrials=[]
