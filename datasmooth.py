@@ -171,7 +171,6 @@ while i < DATALEN:
     i += 1
 
 i=0
-i=0
 
 with open('smoothedrec.csv','w') as printfile:
     writer = csv.writer(printfile)
