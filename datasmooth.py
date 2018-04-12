@@ -58,7 +58,10 @@ def mean(list):
 def convert(iteration):
     name="trial"+str(iteration)+".txt"
     functrial=open(name).readlines()
-    funclist=functrial
+    funclist=[]
+    i=0
+    while i < TRUELEN[iteration-1]:
+        i+=1
     print(len(functrial))
     ##funclist=[float(i) for i in functrial]
     return(funclist)
