@@ -126,7 +126,7 @@ while i < len(rawtrials):
     i += 1
 
 
-print(smoothtrials)
+print(rawtrials)
 ##preforms calculations
 avtable=[]
 """
